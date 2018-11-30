@@ -16,8 +16,9 @@ app.get('/', function (req, res) {
     res.send('Done');
 });
 app.post('/', function (req, res) {
-    // console.log(req.query);
-    console.log(req.body.ref);
+    // console.log(req.query);g
+    let branch = req.body.ref.match(/refs\/heads\/(.*)/)[1]
+    console.log(branch)
     res.send('done');
 })
 app.listen(3000, function () {
